@@ -1,0 +1,60 @@
+.gallery {
+  background-color: #f8f9fa;
+
+  h2 {
+    color: #222;
+  }
+
+  .filter-btn {
+    background: #eee;
+    color: #444;
+    border: none;
+    border-radius: 25px;
+    padding: 0.5rem 1.3rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: #f5b301;
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    &.active {
+      background: #f5b301;
+      color: #fff;
+    }
+  }
+
+  .gallery-item {
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+
+    img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+      border-radius: 10px;
+    }
+
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.55);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      border-radius: 10px;
+    }
+
+    &:hover {
+      img {
+        transform: scale(1.1);
+      }
+      .overlay {
+        opacity: 1;
+      }
+    }
+  }
+}

@@ -1,0 +1,122 @@
+/* ========== COLORS ========== */
+$text-color: #333;
+$gold-color: #b49a60;
+$hover-bg: rgba(180, 154, 96, 0.1);
+
+/* ===== Top Bar ===== */
+.top-bar {
+  background-color: #111;
+  color: #ddd;
+  font-size: 0.9rem;
+  padding: 0.5rem 0;
+
+  i {
+    color: $gold-color;
+    margin-right: 5px;
+  }
+
+  a {
+    color: #ccc;
+    text-decoration: none;
+    margin: 0 4px;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: $gold-color;
+    }
+  }
+}
+
+/* ===== Navbar ===== */
+.main-navbar {
+  .navbar-brand {
+    .text-gold {
+      color: $gold-color;
+    }
+  }
+
+  .nav-item {
+    position: relative;
+
+    .nav-link {
+      position: relative;
+      color: $text-color;
+      font-weight: 500;
+      padding: 0.6rem 1rem;
+      transition: color 0.3s ease;
+
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 4px;
+        width: 0;
+        height: 2px;
+        background-color: $gold-color;
+        transition: width 0.3s ease;
+      }
+
+      &:hover {
+        color: $gold-color;
+      }
+
+      &:hover::after {
+        width: 100%;
+      }
+
+      &.active {
+        color: $gold-color;
+        font-weight: 600;
+
+        &::after {
+          width: 100%;
+        }
+      }
+
+      /* ===== Dropdown Arrow Animation ===== */
+      .arrow-icon {
+        display: inline-block;
+        margin-left: 4px;
+        transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        transform-origin: center;
+      }
+
+      &[aria-expanded='true'] .arrow-icon {
+        transform: rotate(180deg);
+        color: $gold-color;
+      }
+    }
+
+    /* ===== Dropdown Menu ===== */
+    .dropdown-menu {
+      border-radius: 0.5rem;
+      padding: 0.5rem 0;
+      border: none;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      animation: dropdownFade 0.25s ease;
+
+      .dropdown-item {
+        color: $text-color;
+        padding: 0.6rem 1rem;
+        transition: background-color 0.3s ease, color 0.3s ease;
+
+        &:hover {
+          background-color: $hover-bg;
+          color: $gold-color;
+        }
+      }
+    }
+  }
+}
+
+/* ===== Smooth dropdown animation ===== */
+@keyframes dropdownFade {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

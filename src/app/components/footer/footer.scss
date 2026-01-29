@@ -1,0 +1,41 @@
+.footer-section {
+  background-color: #1f1f1f;
+  color: #f1f1f1;
+}
+
+.footer-section h5 {
+  color: #ffc107;
+  letter-spacing: 0.5px;
+}
+
+.footer-section .text-light-emphasis {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.footer-section a:hover {
+  color: #ffc107 !important;
+  text-decoration: underline;
+}
+
+.newsletter-form .form-control {
+  border: none;
+  padding: 0.75rem;
+  font-size: 0.95rem;
+}
+
+.newsletter-form .form-control:focus {
+  box-shadow: none;
+}
+
+.social-icons i {
+  font-size: 1.3rem;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover i {
+  color: #ffc107;
+}
+
+hr {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}

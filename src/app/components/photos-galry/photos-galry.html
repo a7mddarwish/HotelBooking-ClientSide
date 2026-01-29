@@ -1,0 +1,45 @@
+<!-- ===== PHOTO GALLERY SECTION ===== -->
+<section class="gallery py-5">
+  <div class="container">
+
+    <!-- Title -->
+    <div class="text-center mb-5">
+      <h2 class="fw-bold display-6">Photo Gallery</h2>
+      <p class="text-muted">Explore our rooms, facilities, and more in pictures.</p>
+    </div>
+
+    <!-- Filter Buttons -->
+    <div class="gallery-filters text-center mb-4">
+      <button 
+        *ngFor="let cat of categories"
+        class="btn filter-btn mx-2"
+        [class.active]="selectedCategory === cat"
+        (click)="filterPhotos(cat)">
+        {{ cat }}
+      </button>
+    </div>
+
+    <!-- Gallery Grid -->
+    <div *ngIf="filteredPhotos.length > 0; else noPhotos">
+      <div class="row g-4">
+        <div 
+          class="col-12 col-sm-6 col-md-4 col-lg-3"
+          *ngFor="let photo of filteredPhotos">
+          
+          <div class="gallery-item position-relative overflow-hidden rounded-3 shadow-sm">
+            <img [src]="photo.url" [alt]="photo.title" class="img-fluid w-100">
+            <div class="overlay d-flex flex-column justify-content-center align-items-center">
+              <h6 class="text-white mb-2">{{ photo.title }}</h6>
+              <p class="text-light small">{{ photo.category }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- No Photos Message -->
+    <ng-template #noPhotos>
+      <p class="text-center text-muted py-5">No photos found in this category.</p>
+    </ng-template>
+  </div>
+</section>

@@ -1,0 +1,62 @@
+<header class="top-bar">
+  <div class="container-fluid px-4">
+    <div class="row align-items-center text-center text-md-start">
+      <div class="col-12 col-md-6 mb-2 mb-md-0 contact-info">
+        <span><i class="bi bi-telephone"></i> +2010-1645-2088</span>
+        <span><i class="bi bi-envelope ms-3"></i> a7mddarwish7dev@gmail.com</span>
+      </div>
+
+      <div class="col-12 col-md-6 user-links text-center text-md-end">
+        <a href="#">Cart</a> |
+        <a href="#">Checkout</a> |
+        <a href="#">Sign Up</a> |
+        <a href="#">Sign In</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm main-navbar">
+  <div class="container">
+    <a class="navbar-brand fw-bold fs-3" routerLink="/home">
+      <span class="text-dark">E-</span><span class="text-gold">Hotel</span>
+    </a>
+
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" routerLink="/home" routerLinkActive="active">Home</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/about-us" routerLinkActive="active">About Us</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+            Rooms & Suites <i class="bi bi-chevron-down ms-1 arrow-icon"></i>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Single Room</a></li>
+            <li><a class="dropdown-item" href="#">Double Room</a></li>
+            <li><a class="dropdown-item" href="#">Deluxe Suite</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+            Gallery <i class="bi bi-chevron-down ms-1 arrow-icon"></i>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" routerLink="/photo-gallery" routerLinkActive="true">Photos</a></li>
+            <li><a class="dropdown-item" routerLink="/video-gallery" routerLinkActive="true">Videos</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link" routerLink="/blogs" routerLinkActive="active">Blog</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/contact" routerLinkActive="active">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>

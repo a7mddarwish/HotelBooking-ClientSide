@@ -1,0 +1,33 @@
+.about-hero {
+  background: url("/assets/imgs/herobg.jpg") center/cover no-repeat;
+  height: 60vh;
+  position: relative;
+}
+
+.about-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.about-hero h1,
+.about-hero p {
+  position: relative;
+  z-index: 2;
+}
+
+.card img {
+  height: 300px;
+  object-fit: cover;
+}
+
+.card-body {
+  background-color: #fff;
+}
+
+@media (max-width: 768px) {
+  .about-hero {
+    height: 40vh;
+  }
+}
