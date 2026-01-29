@@ -1,0 +1,144 @@
+/* ========== COLORS ========== */
+$text-color: #333;
+$gold-color: #b49a60;
+$hover-bg: rgba(180, 154, 96, 0.1);
+
+/* ===== Room Details Section ===== */
+.room-details {
+  min-height: 100vh;
+  background-color: #f8f9fa;
+
+  .text-gold {
+    color: $gold-color;
+  }
+
+  .room-image {
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      max-height: 500px;
+    }
+  }
+
+  .card {
+    border-radius: 1rem;
+    transition: all 0.3s ease;
+
+    &:hover {
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12) !important;
+    }
+  }
+
+  .rating-stars {
+    i {
+      font-size: 1rem;
+    }
+  }
+
+  .policy-item {
+    padding: 0.5rem 0;
+
+    i {
+      font-size: 1.2rem;
+    }
+  }
+
+  /* Progress bars */
+  .progress {
+    border-radius: 1rem;
+    background-color: #e9ecef;
+
+    .progress-bar {
+      border-radius: 1rem;
+      background-color: $gold-color;
+    }
+  }
+
+  /* Avatar Circle */
+  .avatar-circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, $gold-color 0%, #d4af37 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+
+  /* Review Items */
+  .review-item {
+    &:first-child {
+      border-top: none !important;
+      padding-top: 0 !important;
+      margin-top: 0 !important;
+    }
+  }
+
+  /* Form Controls */
+  .form-control,
+  .form-select {
+    border-radius: 0.75rem;
+    border: 1px solid #dee2e6;
+    padding: 0.75rem 1rem;
+    transition: all 0.3s ease;
+
+    &:focus {
+      border-color: $gold-color;
+      box-shadow: 0 0 0 0.2rem rgba(180, 154, 96, 0.25);
+    }
+  }
+
+  /* Button */
+  .btn-warning {
+    background-color: $gold-color;
+    border-color: $gold-color;
+    border-radius: 0.75rem;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: darken($gold-color, 10%);
+      border-color: darken($gold-color, 10%);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(180, 154, 96, 0.4);
+    }
+  }
+
+  /* Quick Info */
+  .quick-info-item {
+    i {
+      font-size: 1.3rem;
+    }
+  }
+
+  /* Sticky Booking Card */
+  .sticky-top {
+    top: 100px;
+  }
+
+  /* Price Breakdown */
+  .price-breakdown {
+    font-size: 0.95rem;
+  }
+
+  /* Overall Rating */
+  .overall-rating {
+    .rating-number {
+      color: $gold-color;
+    }
+  }
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .room-details {
+    .sticky-top {
+      position: relative !important;
+      top: 0 !important;
+    }
+  }
+}

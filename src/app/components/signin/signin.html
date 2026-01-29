@@ -1,0 +1,114 @@
+<!-- ===== SIGN IN SECTION ===== -->
+<section class="signin-section min-vh-100 d-flex align-items-center justify-content-center position-relative">
+  <!-- Decorative Background Circles -->
+  <div class="bg-circle bg-circle-1"></div>
+  <div class="bg-circle bg-circle-2"></div>
+  <div class="bg-circle bg-circle-3"></div>
+
+  <div class="container position-relative z-1">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-8 col-lg-5">
+        <!-- Sign In Card -->
+        <div class="card border-0 shadow-lg p-4 p-md-5">
+          <!-- Icon -->
+          <div class="text-center mb-4">
+            <div class="icon-wrapper mx-auto">
+              <i class="bi bi-key-fill"></i>
+            </div>
+            <h2 class="fw-bold mt-3 mb-2">Welcome Back</h2>
+            <p class="text-muted">Sign in to your account</p>
+          </div>
+
+          <!-- Sign In Form -->
+          <form (ngSubmit)="onSignIn()">
+            <div class="mb-3">
+              <label class="form-label fw-semibold">Email Address</label>
+              <input 
+                type="email" 
+                class="form-control form-control-lg" 
+                placeholder="your@email.com"
+                [(ngModel)]="email"
+                name="email"
+                required
+              >
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label fw-semibold">Password</label>
+              <input 
+                type="password" 
+                class="form-control form-control-lg" 
+                placeholder="Enter your password"
+                [(ngModel)]="password"
+                name="password"
+                required
+              >
+            </div>
+
+            <div class="d-flex justify-content-between align-items-center mb-4">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="rememberMe">
+                <label class="form-check-label" for="rememberMe">
+                  Remember me
+                </label>
+              </div>
+              <a href="#" class="text-gold text-decoration-none">Forgot Password?</a>
+            </div>
+
+            <button type="submit" class="btn btn-warning btn-lg w-100 text-white fw-semibold mb-3">
+              Sign In
+            </button>
+          </form>
+
+          <!-- Divider -->
+          <div class="divider my-4">
+            <span>Or continue with</span>
+          </div>
+
+          <!-- Social Sign In Buttons -->
+          <div class="row g-3">
+            <div class="col-6">
+              <button type="button" (click)="onGoogleSignIn()" class="btn btn-outline-dark w-100">
+                <i class="bi bi-google me-2"></i> Google
+              </button>
+            </div>
+            <div class="col-6">
+              <button type="button" (click)="onFacebookSignIn()" class="btn btn-outline-primary w-100">
+                <i class="bi bi-facebook me-2"></i> Facebook
+              </button>
+            </div>
+          </div>
+
+          <!-- Sign Up Link -->
+          <div class="text-center mt-4">
+            <p class="text-muted mb-0">
+              Don't have an account? <a href="/signup" class="text-gold fw-semibold text-decoration-none">Sign Up</a>
+            </p>
+          </div>
+        </div>
+
+        <!-- Feature Boxes -->
+        <div class="row g-3 mt-4">
+          <div class="col-4">
+            <div class="feature-box text-center text-white p-3">
+              <i class="bi bi-shield-check fs-3 mb-2"></i>
+              <p class="mb-0 small">Secure</p>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="feature-box text-center text-white p-3">
+              <i class="bi bi-lightning-charge fs-3 mb-2"></i>
+              <p class="mb-0 small">Fast</p>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="feature-box text-center text-white p-3">
+              <i class="bi bi-star fs-3 mb-2"></i>
+              <p class="mb-0 small">Premium</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

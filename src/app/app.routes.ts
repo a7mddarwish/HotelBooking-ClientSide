@@ -5,6 +5,9 @@ import { PhotosGalry } from './components/photos-galry/photos-galry';
 import { Blogs } from './components/blogs/blogs';
 import { Contact } from './components/contact/contact';
 import { VideosGalry } from './components/videos-galry/videos-galry';
+import { RoomDetails } from './components/room-details/room-details';
+import { Signin } from './components/signin/signin';
+import { Signup } from './components/signup/signup';
 
 export const routes: Routes = [
     {path:'' , component: Home},
@@ -13,6 +16,9 @@ export const routes: Routes = [
     {path:'photo-gallery' , component: PhotosGalry},
     {path:'blogs' , component: Blogs},
     {path:'contact' , component: Contact},
-    {path:'video-gallery' , component: VideosGalry}
+    {path:'video-gallery' , component: VideosGalry},
+    {path:'room-details' , component: RoomDetails},
+    {path:'signin' , component: Signin},
+    {path:'signup' , component: Signup}
 
 ];

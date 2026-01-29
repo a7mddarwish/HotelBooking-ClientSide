@@ -1,0 +1,203 @@
+<!-- ===== ROOM DETAILS SECTION ===== -->
+<section class="room-details py-5">
+  <div class="container">
+    <div class="row g-4">
+      <!-- LEFT COLUMN: Room Images & Details -->
+      <div class="col-lg-8">
+        <!-- Room Image -->
+        <div class="room-image mb-4">
+          <img src="assets/imgs/DeluxeRoom.jpg" alt="{{ roomDetails.name }}" class="img-fluid rounded-4 shadow">
+        </div>
+
+        <!-- Room Title & Rating -->
+        <div class="d-flex justify-content-between align-items-start mb-3">
+          <div>
+            <h1 class="display-5 fw-bold mb-2">{{ roomDetails.name }}</h1>
+            <div class="d-flex align-items-center">
+              <div class="rating-stars me-2">
+                <i class="bi bi-star-fill text-warning" *ngFor="let star of [1,2,3,4,5]"></i>
+              </div>
+              <span class="text-muted">{{ roomDetails.rating }} ({{ roomDetails.totalReviews }} reviews)</span>
+            </div>
+          </div>
+          <div class="text-end">
+            <div class="price-tag">
+              <span class="fs-2 fw-bold text-gold">${{ roomDetails.pricePerNight }}</span>
+              <span class="text-muted"> / night</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- About This Room -->
+        <div class="card border-0 shadow-sm mb-4 p-4">
+          <h3 class="fw-bold mb-3">About This Room</h3>
+          <p class="text-muted mb-4">{{ roomDetails.description }}</p>
+          
+          <!-- Amenities -->
+          <h5 class="fw-semibold mb-3">Amenities</h5>
+          <div class="row g-3">
+            <div class="col-6 col-md-4" *ngFor="let amenity of roomDetails.amenities">
+              <div class="d-flex align-items-center">
+                <i class="bi bi-check-circle-fill text-success me-2"></i>
+                <span>{{ amenity }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hotel Policies -->
+        <div class="card border-0 shadow-sm mb-4 p-4">
+          <h3 class="fw-bold mb-3">Hotel Policies</h3>
+          <div class="row g-3">
+            <div class="col-md-6">
+              <div class="policy-item">
+                <i class="bi bi-clock text-gold me-2"></i>
+                <strong>Check-in:</strong> {{ roomDetails.policies.checkIn }}
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="policy-item">
+                <i class="bi bi-clock text-gold me-2"></i>
+                <strong>Check-out:</strong> {{ roomDetails.policies.checkOut }}
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="policy-item">
+                <i class="bi bi-x-circle text-gold me-2"></i>
+                <strong>Cancellation:</strong> {{ roomDetails.policies.cancellation }}
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="policy-item">
+                <i class="bi bi-credit-card text-gold me-2"></i>
+                <strong>Payment:</strong> {{ roomDetails.policies.payment }}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Guest Reviews -->
+        <div class="card border-0 shadow-sm p-4">
+          <h3 class="fw-bold mb-3">Guest Reviews</h3>
+          
+          <!-- Overall Rating -->
+          <div class="overall-rating mb-4">
+            <div class="row align-items-center">
+              <div class="col-md-4 text-center">
+                <div class="rating-number display-3 fw-bold text-gold">{{ roomDetails.rating }}</div>
+                <div class="rating-stars mb-2">
+                  <i class="bi bi-star-fill text-warning fs-5" *ngFor="let star of [1,2,3,4,5]"></i>
+                </div>
+                <p class="text-muted">Based on {{ roomDetails.totalReviews }} reviews</p>
+              </div>
+              <div class="col-md-8">
+                <div class="rating-breakdown">
+                  <div class="mb-2" *ngFor="let rating of roomDetails.ratingBreakdown">
+                    <div class="d-flex align-items-center">
+                      <span class="me-2" style="min-width: 60px;">{{ rating.stars }} stars</span>
+                      <div class="progress flex-grow-1" style="height: 8px;">
+                        <div class="progress-bar bg-warning" [style.width.%]="rating.percentage"></div>
+                      </div>
+                      <span class="ms-2 text-muted" style="min-width: 40px;">{{ rating.percentage }}%</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Individual Reviews -->
+          <div class="reviews-list">
+            <div class="review-item border-top pt-4 mt-3" *ngFor="let review of roomDetails.reviews">
+              <div class="d-flex mb-2">
+                <div class="avatar-circle me-3">{{ review.avatar }}</div>
+                <div class="flex-grow-1">
+                  <div class="d-flex justify-content-between align-items-start mb-2">
+                    <div>
+                      <h6 class="fw-semibold mb-1">{{ review.name }}</h6>
+                      <div class="rating-stars">
+                        <i class="bi bi-star-fill text-warning small" *ngFor="let star of [1,2,3,4,5].slice(0, review.rating)"></i>
+                      </div>
+                    </div>
+                    <span class="text-muted small">{{ review.date }}</span>
+                  </div>
+                  <p class="text-muted mb-0">{{ review.comment }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT COLUMN: Booking Card & Quick Info -->
+      <div class="col-lg-4">
+        <!-- Booking Card -->
+        <div class="card border-0 shadow-lg sticky-top mb-4 p-4" style="top: 100px;">
+          <h4 class="fw-bold mb-3">Reserve Your Room</h4>
+          
+          <form>
+            <div class="mb-3">
+              <label class="form-label fw-semibold">Check-in Date</label>
+              <input type="date" class="form-control form-control-lg" [(ngModel)]="checkInDate" name="checkInDate">
+            </div>
+            
+            <div class="mb-3">
+              <label class="form-label fw-semibold">Check-out Date</label>
+              <input type="date" class="form-control form-control-lg" [(ngModel)]="checkOutDate" name="checkOutDate">
+            </div>
+            
+            <div class="mb-4">
+              <label class="form-label fw-semibold">Number of Guests</label>
+              <select class="form-select form-select-lg" [(ngModel)]="guests" name="guests">
+                <option [value]="1">1 Guest</option>
+                <option [value]="2">2 Guests</option>
+                <option [value]="3">3 Guests</option>
+              </select>
+            </div>
+
+            <!-- Price Breakdown -->
+            <div class="price-breakdown border-top pt-3 mb-3">
+              <div class="d-flex justify-content-between mb-2">
+                <span>${{ roomDetails.pricePerNight }} × 1 night</span>
+                <span>${{ roomDetails.pricePerNight }}</span>
+              </div>
+              <div class="d-flex justify-content-between mb-2">
+                <span>Service fee</span>
+                <span>$50</span>
+              </div>
+              <div class="d-flex justify-content-between fw-bold border-top pt-2 mt-2">
+                <span>Total</span>
+                <span class="text-gold">${{ roomDetails.pricePerNight + 50 }}</span>
+              </div>
+            </div>
+
+            <button type="button" (click)="onBookNow()" class="btn btn-warning btn-lg w-100 text-white fw-semibold">
+              Book Now
+            </button>
+          </form>
+        </div>
+
+        <!-- Quick Info Card -->
+        <div class="card border-0 shadow-sm p-4">
+          <h5 class="fw-bold mb-3">Quick Info</h5>
+          <div class="quick-info-item mb-3">
+            <i class="bi bi-rulers text-gold me-2"></i>
+            <span><strong>Size:</strong> {{ roomDetails.size }}</span>
+          </div>
+          <div class="quick-info-item mb-3">
+            <i class="bi bi-door-open text-gold me-2"></i>
+            <span><strong>Bed:</strong> {{ roomDetails.bedType }}</span>
+          </div>
+          <div class="quick-info-item mb-3">
+            <i class="bi bi-people text-gold me-2"></i>
+            <span><strong>Capacity:</strong> {{ roomDetails.capacity }}</span>
+          </div>
+          <div class="quick-info-item">
+            <i class="bi bi-binoculars text-gold me-2"></i>
+            <span><strong>View:</strong> {{ roomDetails.view }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
