@@ -1,0 +1,25 @@
+.room-details-section {
+  background: #f8f9fa;
+  min-height: 80vh;
+
+  .card {
+    border-radius: 1rem;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+
+    &:hover {
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  .btn-warning {
+    background-color: #ffc107;
+    border: none;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: #e0a800;
+      transform: translateY(-2px);
+    }
+  }
+}

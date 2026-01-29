@@ -1,0 +1,22 @@
+.cart-section {
+  min-height: 80vh;
+
+  .card {
+    border-radius: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    }
+  }
+
+  .btn-warning {
+    background-color: #ffc107;
+    border: none;
+
+    &:hover {
+      background-color: #e0a800;
+    }
+  }
+}
