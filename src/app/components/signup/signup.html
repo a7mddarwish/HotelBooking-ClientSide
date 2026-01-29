@@ -1,0 +1,142 @@
+<!-- ===== SIGN UP SECTION ===== -->
+<section class="signup-section min-vh-100 d-flex align-items-center justify-content-center position-relative">
+  <!-- Decorative Background Circles -->
+  <div class="bg-circle bg-circle-1"></div>
+  <div class="bg-circle bg-circle-2"></div>
+  <div class="bg-circle bg-circle-3"></div>
+
+  <div class="container position-relative z-1">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-8 col-lg-5">
+        <!-- Sign Up Card -->
+        <div class="card border-0 shadow-lg p-4 p-md-5">
+          <!-- Icon -->
+          <div class="text-center mb-4">
+            <div class="icon-wrapper mx-auto">
+              <i class="bi bi-person-plus-fill"></i>
+            </div>
+            <h2 class="fw-bold mt-3 mb-2">Create Account</h2>
+            <p class="text-muted">Join us and enjoy exclusive benefits</p>
+          </div>
+
+          <!-- Sign Up Form -->
+          <form (ngSubmit)="onSignUp()">
+            <div class="mb-3">
+              <label class="form-label fw-semibold">Full Name</label>
+              <input 
+                type="text" 
+                class="form-control form-control-lg" 
+                placeholder="John Doe"
+                [(ngModel)]="fullName"
+                name="fullName"
+                required
+              >
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label fw-semibold">Email Address</label>
+              <input 
+                type="email" 
+                class="form-control form-control-lg" 
+                placeholder="your@email.com"
+                [(ngModel)]="email"
+                name="email"
+                required
+              >
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label fw-semibold">Password</label>
+              <input 
+                type="password" 
+                class="form-control form-control-lg" 
+                placeholder="Create a password"
+                [(ngModel)]="password"
+                name="password"
+                required
+              >
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label fw-semibold">Confirm Password</label>
+              <input 
+                type="password" 
+                class="form-control form-control-lg" 
+                placeholder="Confirm your password"
+                [(ngModel)]="confirmPassword"
+                name="confirmPassword"
+                required
+              >
+            </div>
+
+            <div class="form-check mb-4">
+              <input 
+                class="form-check-input" 
+                type="checkbox" 
+                id="agreeToTerms"
+                [(ngModel)]="agreeToTerms"
+                name="agreeToTerms"
+                required
+              >
+              <label class="form-check-label" for="agreeToTerms">
+                I agree to the <a href="#" class="text-gold">Terms & Conditions</a>
+              </label>
+            </div>
+
+            <button type="submit" class="btn btn-warning btn-lg w-100 text-white fw-semibold mb-3">
+              Create Account
+            </button>
+          </form>
+
+          <!-- Divider -->
+          <div class="divider my-4">
+            <span>Or sign up with</span>
+          </div>
+
+          <!-- Social Sign Up Buttons -->
+          <div class="row g-3">
+            <div class="col-6">
+              <button type="button" (click)="onGoogleSignUp()" class="btn btn-outline-dark w-100">
+                <i class="bi bi-google me-2"></i> Google
+              </button>
+            </div>
+            <div class="col-6">
+              <button type="button" (click)="onFacebookSignUp()" class="btn btn-outline-primary w-100">
+                <i class="bi bi-facebook me-2"></i> Facebook
+              </button>
+            </div>
+          </div>
+
+          <!-- Sign In Link -->
+          <div class="text-center mt-4">
+            <p class="text-muted mb-0">
+              Already have an account? <a routerLink="/signin" class="text-gold fw-semibold text-decoration-none">Sign In</a>
+            </p>
+          </div>
+        </div>
+
+        <!-- Benefit Boxes -->
+        <div class="row g-3 mt-4">
+          <div class="col-4">
+            <div class="benefit-box text-center text-white p-3">
+              <i class="bi bi-gift fs-3 mb-2"></i>
+              <p class="mb-0 small fw-semibold">Exclusive Offers</p>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="benefit-box text-center text-white p-3">
+              <i class="bi bi-percent fs-3 mb-2"></i>
+              <p class="mb-0 small fw-semibold">Best Discounts</p>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="benefit-box text-center text-white p-3">
+              <i class="bi bi-trophy fs-3 mb-2"></i>
+              <p class="mb-0 small fw-semibold">Rewards</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

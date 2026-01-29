@@ -1,0 +1,156 @@
+/* ========== COLORS ========== */
+@use 'sass:color';
+
+$gold-color: #b49a60;
+
+/* ===== Sign In Section ===== */
+.signin-section {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  position: relative;
+  overflow: hidden;
+
+  /* Decorative Background Circles */
+  .bg-circle {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.1;
+
+    &.bg-circle-1 {
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.3) 0%, transparent 50%);
+      top: -250px;
+      left: -250px;
+    }
+
+    &.bg-circle-2 {
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle at center, rgba(255, 255, 255, 0.2) 0%, transparent 50%);
+      bottom: -200px;
+      right: -200px;
+    }
+
+    &.bg-circle-3 {
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle at center, rgba(255, 255, 255, 0.15) 0%, transparent 50%);
+      top: 50%;
+      right: 10%;
+    }
+  }
+
+  /* Card */
+  .card {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 1.5rem;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2) !important;
+    }
+  }
+
+  /* Icon Wrapper */
+  .icon-wrapper {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, $gold-color 0%, #d4af37 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+
+    i {
+      font-size: 2.5rem;
+    }
+  }
+
+  /* Form Controls */
+  .form-control {
+    border-radius: 0.75rem;
+    border: 1px solid #dee2e6;
+    padding: 0.75rem 1rem;
+    transition: all 0.3s ease;
+
+    &:focus {
+      border-color: $gold-color;
+      box-shadow: 0 0 0 0.2rem rgba(180, 154, 96, 0.25);
+    }
+  }
+
+  /* Text Gold */
+  .text-gold {
+    color: $gold-color;
+
+    &:hover {
+      color: color.adjust($gold-color, $lightness: -10%);
+    }
+  }
+
+  /* Button */
+  .btn-warning {
+    background-color: $gold-color;
+    border-color: $gold-color;
+    border-radius: 0.75rem;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: color.adjust($gold-color, $lightness: -10%);
+      border-color: color.adjust($gold-color, $lightness: -10%);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(180, 154, 96, 0.4);
+    }
+  }
+
+  /* Social Buttons */
+  .btn-outline-dark,
+  .btn-outline-primary {
+    border-radius: 0.75rem;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+    }
+  }
+
+  /* Divider */
+  .divider {
+    position: relative;
+    text-align: center;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background-color: #dee2e6;
+    }
+
+    span {
+      position: relative;
+      background-color: white;
+      padding: 0 1rem;
+      color: #6c757d;
+      font-size: 0.9rem;
+    }
+  }
+
+  /* Feature Boxes */
+  .feature-box {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 1rem;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.3);
+      transform: translateY(-5px);
+    }
+  }
+}

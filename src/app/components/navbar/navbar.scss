@@ -9,6 +9,8 @@ $hover-bg: rgba(180, 154, 96, 0.1);
   color: #ddd;
   font-size: 0.9rem;
   padding: 0.5rem 0;
+  position: relative;
+  z-index: 1040;
 
   i {
     color: $gold-color;
@@ -29,6 +31,9 @@ $hover-bg: rgba(180, 154, 96, 0.1);
 
 /* ===== Navbar ===== */
 .main-navbar {
+  position: relative;
+  z-index: 1050;
+
   .navbar-brand {
     .text-gold {
       color: $gold-color;
@@ -92,8 +97,10 @@ $hover-bg: rgba(180, 154, 96, 0.1);
       border-radius: 0.5rem;
       padding: 0.5rem 0;
       border: none;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
       animation: dropdownFade 0.25s ease;
+      z-index: 1060;
+      position: absolute !important;
 
       .dropdown-item {
         color: $text-color;
