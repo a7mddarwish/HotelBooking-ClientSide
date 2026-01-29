@@ -1,4 +1,6 @@
 /* ========== COLORS ========== */
+@use 'sass:color';
+
 $gold-color: #b49a60;
 
 /* ===== Sign Up Section ===== */
@@ -85,7 +87,7 @@ $gold-color: #b49a60;
     color: $gold-color;
 
     &:hover {
-      color: darken($gold-color, 10%);
+      color: color.adjust($gold-color, $lightness: -10%);
     }
   }
 
@@ -97,8 +99,8 @@ $gold-color: #b49a60;
     transition: all 0.3s ease;
 
     &:hover {
-      background-color: darken($gold-color, 10%);
-      border-color: darken($gold-color, 10%);
+      background-color: color.adjust($gold-color, $lightness: -10%);
+      border-color: color.adjust($gold-color, $lightness: -10%);
       transform: translateY(-2px);
       box-shadow: 0 4px 15px rgba(180, 154, 96, 0.4);
     }
