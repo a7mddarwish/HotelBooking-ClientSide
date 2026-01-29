@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, RouterLink],
   templateUrl: './signup.html',
   styleUrls: ['./signup.scss']
 })
@@ -19,11 +20,15 @@ export class Signup implements OnInit {
   ngOnInit(): void {}
 
   onSignUp(): void {
+    if (this.password !== this.confirmPassword) {
+      console.error('Passwords do not match');
+      return;
+    }
+    
     console.log({
       fullName: this.fullName,
       email: this.email,
-      password: this.password,
-      confirmPassword: this.confirmPassword,
+      // Note: Passwords intentionally not logged for security
       agreeToTerms: this.agreeToTerms
     });
   }

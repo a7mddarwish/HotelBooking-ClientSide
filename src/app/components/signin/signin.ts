@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-signin',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, RouterLink],
   templateUrl: './signin.html',
   styleUrls: ['./signin.scss']
 })
@@ -17,8 +18,8 @@ export class Signin implements OnInit {
 
   onSignIn(): void {
     console.log({
-      email: this.email,
-      password: this.password
+      email: this.email
+      // Note: Password intentionally not logged for security
     });
   }
 
