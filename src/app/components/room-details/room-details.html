@@ -1,0 +1,46 @@
+<section class="room-details-section py-5" *ngIf="!loading && room">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="card border-0 shadow-sm mb-4">
+          <img [src]="room.imageUrl" [alt]="room.name" class="card-img-top" style="height: 500px; object-fit: cover;">
+          <div class="card-body p-4">
+            <h2 class="fw-bold mb-3">{{ room.name }}</h2>
+            <p class="text-muted mb-4">
+              Experience luxury and comfort in our {{ room.name }}. Perfect for your stay with premium amenities and elegant design.
+            </p>
+
+            <h4 class="fw-semibold mb-3">Room Features:</h4>
+            <ul class="list-unstyled">
+              <li class="mb-2"><i class="bi bi-check-circle-fill text-warning me-2"></i> Free Wi-Fi</li>
+              <li class="mb-2"><i class="bi bi-check-circle-fill text-warning me-2"></i> 24/7 Room Service</li>
+              <li class="mb-2"><i class="bi bi-check-circle-fill text-warning me-2"></i> Air Conditioning</li>
+              <li class="mb-2"><i class="bi bi-check-circle-fill text-warning me-2"></i> Flat-screen TV</li>
+              <li class="mb-2"><i class="bi bi-check-circle-fill text-warning me-2"></i> Private Bathroom</li>
+              <li class="mb-2"><i class="bi bi-check-circle-fill text-warning me-2"></i> Mini Bar</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4">
+        <div class="card border-0 shadow-sm sticky-top" style="top: 100px;">
+          <div class="card-body p-4">
+            <h3 class="fw-bold text-warning mb-3">${{ room.pricePerNight }} / Night</h3>
+            <hr>
+            <button (click)="onBookNow()" class="btn btn-warning btn-lg w-100 text-white fw-semibold mb-3">
+              Book Now
+            </button>
+            <p class="text-muted small text-center mb-0">Free cancellation up to 24 hours before check-in</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div *ngIf="loading" class="text-center py-5">
+  <div class="spinner-border text-warning">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+</div>

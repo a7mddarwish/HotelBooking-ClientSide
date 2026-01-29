@@ -242,9 +242,9 @@
                 <p class="card-text text-muted mb-3">
                   ${{ room.pricePerNight }} / Night
                 </p>
-                <button class="btn btn-outline-warning rounded-pill px-4">
+                <a [routerLink]="['/room-details', room.id]" class="btn btn-outline-warning rounded-pill px-4">
                   Show Details
-                </button>
+                </a>
               </div>
             </div>
           </div>

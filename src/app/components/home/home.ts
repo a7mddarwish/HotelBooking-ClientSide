@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import flatpickr from 'flatpickr';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 import { Homeserv } from '../../services/homeserv';
 import { RoomType } from '../../models/RoomType';
 import { ChangeDetectorRef } from '@angular/core';
@@ -9,7 +10,7 @@ import { ChangeDetectorRef } from '@angular/core';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, RouterModule],
   templateUrl: './home.html',
   styleUrls: ['./home.scss']
 })
